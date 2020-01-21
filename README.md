@@ -2,7 +2,7 @@
 Template login hotspot mikrotik simple made by Bootstrap
 
 # To-do-list
-* - Status page belum jadi
+* Status page belum jadi
 
 # Screenshot
 ## Login
