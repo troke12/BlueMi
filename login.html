@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="-1" />
+  <title>AdminLTE 3 | Top Navigation</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="assets/css/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="assets/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <style>
+  .blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.content {
+  background-image: url("img/pattern.png");
+  background-repeat: repeat;
+}
+</style>
+</head>
+<body class="hold-transition layout-top-nav">
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript">
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	</script>
+$(endif)
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-dark navbar-primary">
+    <div class="container">
+      
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="login.html" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a href="status" class="nav-link">Status</a>
+          </li>
+		  <li class="nav-item">
+            <a href="paket.html" class="nav-link">Harga Paket</a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- /.content-header --
+
+    <!-- Main content -->
+    <div class="content">
+	    <div class="content-header">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark"> OCHI WIFI CORNER </small></h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="card card-primary">
+						<div class="card-header">
+							<h5 class="card-title m-0">Login</h5>
+						</div>
+						<div class="card-body justify-content-center text-center">
+						<div class="row">
+						<div class="col auto">
+												<div class="blink_me"><h5>
+						Silahkan Login terlebih dahulu
+						</h5></div>
+						</div>
+						</div>
+						<div class="row justify-content-center text-center my-2">
+						<div id="voucher" class="col-6"><button type="button" class="btn btn-info btn-block">VOUCHER</button></div>
+							<div id="member" class="col-6"><button type="button" class="btn btn-secondary btn-block rounded-right"></i>MEMBER</button></div>
+						
+						</div>
+						
+						<form id="form-voucher" name="" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+			  <div class="form-row">
+					<input type="hidden" name="dst" value="$(link-orig)" />
+					<input type="hidden" name="popup" value="true" />
+			    <div class="col-md-12">
+					<div class="input-group mt-3 mb-4">
+					<div class="w-25 input-group-prepend">
+						<div class="w-100 input-group-text justify-content-center"><i class="fas fa-id-card-alt fa-2x"></i></div>
+					</div>
+					<input name="username" type="text" class="form-control form-control-lg" id="vuname" placeholder="Kode Voucher" required>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<input name="password" type="hidden" class="form-control" id="vpass" placeholder="Password" required>
+				</div>
+				<div class="col-md-12">
+					<button type="submit" value="OK" class="btn btn-success btn-block mb-5"><i class="pr-2 fas fa-sign-in-alt"></i> Masuk</button>
+				</div>
+				<div class="col-md-12">
+					<div class="text-center mb-2">
+						<p class="bg-danger text-light my-3 rounded"> </p>
+					</div>
+				</div>
+			  </div>
+			</form>
+						
+			<form style="display:none;" id="form-member" name="" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+			  <div class="form-row">
+					<input type="hidden" name="dst" value="$(link-orig)" />
+					<input type="hidden" name="popup" value="true" />
+			    <div class="col-md-12">
+					<div class="input-group mb-2">
+					<div class="w-25 input-group-prepend">
+						<div class="w-100 input-group-text justify-content-center"><i class="fas fa-user fa-2x"></i></div>
+					</div>
+					<input name="username" type="text" class="form-control form-control-lg" id="muname" placeholder="Username" value="$(username)" required>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="input-group mb-2">
+					<div class="w-25 input-group-prepend">
+						<div class="w-100 input-group-text justify-content-center"><i class="fas fa-key fa-2x"></i></div>
+					</div>
+					<input name="password" type="password" class="form-control form-control-lg" id="inlineFormInputGroup" placeholder="Password" required>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<button type="submit" value="OK" class="btn btn-success btn-block mb-3"><i class="pr-2 fas fa-sign-in-alt"></i> Masuk</button>
+					$(if trial == 'yes')<p class="col-12 text-center mb-2"><a class="text-light bg-secondary rounded px-2 py-1" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Coba Gratis</a></p>$(endif)
+				</div>
+				<div class="col-md-12">
+					<div class="text-center">
+						$(if error)<p class="bg-danger text-light mb-2 rounded"> $(error)</p>$(endif)
+					</div>
+				</div>
+			  </div>
+			</form>
+		
+						
+						
+						</div>
+                <!-- /.card-body -->
+					</div>
+				</div>
+			<div class="col-sm-8">
+			<div class="card card-outline card-primary">
+				<div class="card-body">
+					<img class="d-block w-100" src="img/banner.png" alt="Third slide">
+				</div>
+			</div>	
+			</div>
+			</div>
+			<div class="row">
+				<div class="col-sm">
+					<div class="card card-primary">
+						<div class="card-header">
+							<h5 class="card-title m-0">Iklan</h5>
+						</div>
+						<div class="card-body">
+						<img class="d-block w-100" src="img/iklan.png" alt="Third slide">
+						</div>
+					</div>
+				</div>
+				<div class="col-sm">
+					<div class="card card-primary">
+						<div class="card-header">
+							<h5 class="card-title m-0">Petunjuk</h5>
+						</div>
+						<div class="card-body">
+						<img class="d-block w-100" src="img/iklan.png" alt="Third slide">
+						</div>
+					</div>
+				</div>
+				<div class="col-sm">
+					<div class="card card-primary">
+						<div class="card-header">
+							<h5 class="card-title m-0">Alamat</h5>
+						</div>
+						<div class="card-body">
+						<img class="d-block w-100" src="img/iklan.png" alt="Third slide">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+ 
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+ <footer class="footer mt-auto py-3">
+  <div class="container">
+    <span class="text-muted">Place sticky footer content here.</span>
+  </div>
+</footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="assets/js/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="assets/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="assets/js/adminlte.min.js"></script>
+<script src="assets/custome.js"></script>
+<script src="assets/md5.js"></script>
+<script src="assets/jquery.js"></script>
+</body>
+</html>
