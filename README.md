@@ -1,7 +1,7 @@
 # BlueMi
 Template login hotspot mikrotik simple made by Bootstrap and AdminLTE
 
-Tolong, bila menemukan bug silahkan laporkan dengan cara open [issue!](/issues)
+Tolong, bila menemukan bug silahkan laporkan dengan cara open [issue!](https://github.com/troke12/BlueMi/issues)
 
 # To-do-list
 * [x] Status page
