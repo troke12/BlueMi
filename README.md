@@ -5,6 +5,7 @@ Tolong, bila menemukan bug silahkan laporkan dengan cara open [issue!](https://g
 
 # To-do-list
 * [x] Status page
+* [ ] Logout page
 * [ ] Gambar halaman depan harus diganti  (gak jago photoshop)
 
 # Screenshot
