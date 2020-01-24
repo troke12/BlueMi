@@ -8,7 +8,7 @@ Theme ini support dengan mikhmon
 # To-do-list
 * [x] Status page
 * [x] Logout page
-* [ ] Gambar halaman depan harus diganti  (gak jago photoshop)
+* [x] Redesign front page
 
 # Cara pakai
 * download dulu file paling terbaru [disini!](https://github.com/troke12/BlueMi/releases/latest)
