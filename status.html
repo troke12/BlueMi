@@ -76,14 +76,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container">
       </div><!-- /.container-fluid -->
     </div>
-	  <div class="row mb-3 justify-content-md-center">
+	<div class="row justify-content-md-center">
 		<div class="col-lg-6 auto">
 			<div class="card card-primary">
               <div class="card-header">
                 <h5 class="card-title m-0">Status</h5>
               </div>
 		<div class="col-lg-12 my-3 text-center">
-			<p class="h6">~ SELAMAT DATANG ~<p>
+			<p class="h6">~ Selamat ~<p>
 			<p>Anda sudah terhubung ke internet</p>
 			<p>Silahkan berpetualangan sepuasnya!</p>
 		</div>
@@ -96,7 +96,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <td>$(ip)</td>
                     </tr>
                     <tr>
-                      <td>Mac Address</td>
+                      <td>MAC Address</td>
                       <td><i class="fas fa-caret-right"></i></td>
                       <td>$(mac)</td>
                     </tr>
@@ -117,18 +117,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </tbody>
                 </table>
 				</div>
-				
-		<div class="col-12 my-4">
+			  		<div class="col-sm my-4">
 			<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
 			$(if login-by-mac != 'yes')<button type="submit" class="btn btn-info btn-block mb-2" value="log off"><i class="pr-2 fas fa-sign-out-alt"></i> LOGOUT</button>$(endif)
 			</form>
+		</div>		
 		</div>
 		</div>
-		</div>
-	  </div>
-	  <div class="row ms-1">
 	  </div>
 	</div>
+</div>
 	
 </div>
   <footer class="main-footer">
