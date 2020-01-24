@@ -23,7 +23,7 @@ Theme ini support dengan mikhmon
 ![screenshot](ss/login.png)
 
 ## Paket
-![screenshot](ss/paket.png)
+![screenshot](ss/pket.png)
 
 ## Status
 ![screenshot](ss/status.png)
