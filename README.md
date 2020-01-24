@@ -7,7 +7,7 @@ Theme ini support dengan mikhmon
 
 # To-do-list
 * [x] Status page
-* [ ] Logout page
+* [x] Logout page
 * [ ] Gambar halaman depan harus diganti  (gak jago photoshop)
 
 # Cara pakai
@@ -27,3 +27,6 @@ Theme ini support dengan mikhmon
 
 ## Status
 ![screenshot](ss/status.png)
+
+## Logout
+![screenshot](ss/logout.png)
