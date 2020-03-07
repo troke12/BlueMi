@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="-1" />
+  <title>OCHI NET</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="assets/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="assets/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <style>
+  .blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.content {
+  background-color: grey;
+  background-image: url("img/pattern.png");
+  background-repeat: repeat;
+}
+</style>
+</head>
+<body class="hold-transition layout-top-nav">
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript">
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	</script>
+$(endif)
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-dark navbar-primary">
+    <div class="container">
+      
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+		
+		<a class="navbar-brand" href="#">
+    <img src="img/logo.png" alt="ochinetlogo" class="brand-image" width="150">
+  </a> 
+  
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="login.html" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a href="status" class="nav-link">Status</a>
+          </li>
+		  <li class="nav-item">
+            <a href="paket.html" class="nav-link">Harga Paket</a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- /.content-header --
+
+    <!-- Main content -->
+    <div class="content">
+		<div class="container py-5">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="card card-primary">
+						<div class="card-header">
+							<h5 class="card-title m-0">Login</h5>
+						</div>
+						<div class="card-body justify-content-center text-center">
+						<div class="row">
+						<div class="col auto">
+						<div class="blink_me"><h5>Silahkan Login terlebih dahulu</h5></div>
+						</div>
+						</div>
+						<div class="row justify-content-center text-center my-2">
+						<div id="voucher" class="col-6"><button type="button" class="btn btn-primary btn-block">VOUCHER</button></div>
+						<div id="member" class="col-6"><button type="button" class="btn btn-dark btn-block rounded-right"></i>MEMBER</button></div>
+						
+						</div>
+						
+						<form id="form-voucher" name="" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+			  <div class="form-row">
+					<input type="hidden" name="dst" value="$(link-orig)" />
+					<input type="hidden" name="popup" value="true" />
+			    <div class="col-md-12">
+					<div class="input-group mt-3 mb-4">
+					<div class="w-25 input-group-prepend">
+						<div class="w-100 input-group-text justify-content-center"><i class="fas fa-id-card-alt fa-2x"></i></div>
+					</div>
+					<input name="username" type="text" class="form-control form-control-lg" id="vuname" placeholder="Kode Voucher" required>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<input name="password" type="hidden" class="form-control" id="vpass" placeholder="Password" required>
+				</div>
+				<div class="col-md-12">
+					<button type="submit" value="OK" class="btn btn-success btn-block mb-3"><i class="pr-2 fas fa-sign-in-alt"></i> Masuk</button>
+				</div>
+				<div class="col col-mb-4">
+				$(if trial == 'yes')
+				<a class="btn btn-primary btn-block" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" role="button">Coba Gratis</a>
+				$(endif)
+				</div>
+				<div class="col-md-12">
+					<div class="text-center mb-2">
+						$(if error)<p class="bg-danger text-light my-3 rounded"> $(error)</p>$(endif)
+					</div>
+				</div>
+			  </div>
+			</form>
+						
+			<form style="display:none;" id="form-member" name="" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+			  <div class="form-row">
+					<input type="hidden" name="dst" value="$(link-orig)" />
+					<input type="hidden" name="popup" value="true" />
+			    <div class="col-md-12">
+					<div class="input-group mb-2">
+					<div class="w-25 input-group-prepend">
+						<div class="w-100 input-group-text justify-content-center"><i class="fas fa-user fa-2x"></i></div>
+					</div>
+					<input name="username" type="text" class="form-control form-control-lg" id="muname" placeholder="Username" value="$(username)" required>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="input-group mb-2">
+					<div class="w-25 input-group-prepend">
+						<div class="w-100 input-group-text justify-content-center"><i class="fas fa-key fa-2x"></i></div>
+					</div>
+					<input name="password" type="password" class="form-control form-control-lg" id="inlineFormInputGroup" placeholder="Password" required>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<button type="submit" value="OK" class="btn btn-success btn-block mb-3"><i class="pr-2 fas fa-sign-in-alt"></i> Masuk</button>
+				</div>
+				<div class="col col-mb-4">
+				$(if trial == 'yes')
+				<a class="btn btn-primary btn-block" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" role="button">Coba Gratis</a>
+				$(endif)
+				</div>
+				<div class="col-md-12">
+					<div class="text-center">
+						$(if error)<p class="bg-danger text-light mb-2 rounded"> $(error)</p>$(endif)
+					</div>
+				</div>
+			  </div>
+			</form>
+		
+						
+						
+						</div>
+                <!-- /.card-body -->
+					</div>
+				</div>
+			<div class="col-sm-8">
+			<div class="card card-primary">
+			<div class="card-block">
+			<div class="card-body">
+						<div class="nav nav-tabs" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Info</a>
+						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Tutorial</a>
+						<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+						</div>
+						<div class="tab-content" id="nav-tabContent">
+						<div class="py-3 tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item list-group-item-success"><i class="fas fa-long-arrow-alt-right"></i> WhatsApp gratis untuk semua, bisa dipakai tanpa login.</li>
+							<li class="list-group-item list-group-item-danger"><i class="fas fa-long-arrow-alt-right"></i> Pada tanggal <b>25 Maret 2020 Hari Raya Nyepi</b> Internet akan dimatikan sementara, sesuai Surat Edaran dari Kominfo. Kembali Aktif pada Tanggal 26 Maret 2020</li>
+							<li class="list-group-item list-group-item-success"><i class="fas fa-long-arrow-alt-right"></i> Pertanggal <b>25 Maret 2020</b> akan diberlakukan penyusaian harga paket.</li>
+							<li class="list-group-item"><i class="fas fa-long-arrow-alt-right"></i> Voucher yang lama tidak dijual lagi setelah 25 Maret 2020.</li>
+							<li class="list-group-item"><i class="fas fa-long-arrow-alt-right"></i> Paket Hotspot 30 Hari tidak lagi menggunakan member.</li>
+							<a href="paket.html" class="list-group-item list-group-item-action list-group-item-primary"><i class="fas fa-long-arrow-alt-right"></i> Tersedia Paket Baru Wifi Pribadi, Silahkan cek menu Paket atau Klik ini untuk melihat harga paket dan syarat ketentuan. <span class="badge badge-secondary">New</span></a>
+						</ul>
+						<img class="py-3 d-block w-100" src="img/banner.jpg" alt="Third slide">
+						</div>
+						<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+						<h5>Tutorial Menggunakan Voucher/Member :</h5>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">1. Pastikan sudah membeli Voucher/Member.</li>
+							<li class="list-group-item">2. Kemudian Hubungkan perangkat HP/Laptop Anda dengan Wifi <b>OCHI-NET</b> !</li>
+							<li class="list-group-item">3. Halaman Login akan muncul dengan sendirinya, Jika tidak silahkan ketik <b>"wifi.troke.id"</b> pada Browser.</li>
+							<li class="list-group-item">4. Pilih Voucher atau Member pada halaman login.</li>
+							<li class="list-group-item">5. Masukkan Kode Voucher / Username & Password pada halaman login.</li>
+							<li class="list-group-item">6. Klik Masuk!</li>
+							<li class="list-group-item">7. Selamat Anda sudah terhubung dengan Jaringan <b>OCHI-NET</b></li>
+						</ul>
+						</div>
+						<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+						<table class="table table-striped">
+						<tbody>
+						<tr>
+							<td>ALAMAT</td>
+							<td><i class="fas fa-caret-right"></i></td>
+							<td>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+						</tr>
+						<tr>
+							<td>WHATSAPP 1</td>
+							<td><i class="fas fa-caret-right"></i></td>
+							<td><a href="tel:0xxxxxx">X32</a></td>
+						</tr>
+						<tr>
+							<td>WHATSAPPP 2</td>
+							<td><i class="fas fa-caret-right"></i></td>
+							<td><a href="tel:08xxxxx4">xx34</a></td>
+						</tr>
+						<tr>
+							<td>RUMAH</td>
+							<td><i class="fas fa-caret-right"></i></td>
+							<td><a href="tel:xxx4">0xxxx74</a></td>
+						</tr>
+						</tbody>
+						</table>
+						</div>
+					</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+		</div>
+    </div>
+  </div>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2019-2020 <a href="http://troke.id">troke.id</a>.</strong> All rights
+    reserved.
+  </footer>
+</div>
+
+<!-- jQuery -->
+<script src="assets/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="assets/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="assets/adminlte.min.js"></script>
+<script src="assets/custome.js"></script>
+<script src="assets/md5.js"></script>
+<script src="assets/jquery.js"></script>
+</body>
+</html>
